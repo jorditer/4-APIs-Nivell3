@@ -18,6 +18,12 @@ async function getDadJoke() {
 	  console.error(error);  // Handle errors here
 	}
 }
+
+interface Feedback {
+	joke: string;
+	score: 1 | 2 | 3;
+	date: string;
+}
   
 // You can call the function and use the returned data
 let updateJoke = () => {

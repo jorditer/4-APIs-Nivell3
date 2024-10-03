@@ -1,4 +1,16 @@
+// api tienes que poner ubicacion, 
+
 let joke: HTMLElement | null = document.getElementById("joke");
+
+
+
+type Feedback = {
+	joke: string;
+	score: 1 | 2 | 3;
+	date: string;
+}
+
+let reportAcudits: Feedback[] = [];
 
 async function getDadJoke() {
 	try {
@@ -18,17 +30,25 @@ async function getDadJoke() {
 	  console.error(error);  // Handle errors here
 	}
 }
-
-interface Feedback {
-	joke: string;
-	score: 1 | 2 | 3;
-	date: string;
-}
   
-// You can call the function and use the returned data
 let updateJoke = () => {
+	// Handle checked button
+	let selectedButton = document.querySelector('.btn-check:checked') as HTMLInputElement; // queryselector returns Element, that has no .value
+	if (selectedButton) {
+		let score = parseInt(selectedButton?.value);
+		reportAcudits.push({
+			joke: joke?.innerText || "",
+			score: score as Feedback['score'],
+			date: new Date().toISOString()
+		})
+		console.log(reportAcudits);
+		selectedButton.checked = false;
+	}
+	showJoke();
+}
+// Change Joke
+function showJoke() {
 	getDadJoke().then(data => {
-	// console.log('Joke:', data.joke);  // Access the data outside the function
 	if (joke !== null) {
 		joke.innerText = data.joke;
 	} else {
@@ -36,5 +56,5 @@ let updateJoke = () => {
 	}
 	});
 }
-updateJoke();
+showJoke();
 document.getElementById('jokeButton')?.addEventListener('click', updateJoke); 

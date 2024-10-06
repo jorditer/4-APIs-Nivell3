@@ -26,22 +26,6 @@ The application integrates with three external APIs:
 - **Bootstrap**: Responsive design and pre-built components.
 - **Node.js**: For managing dependencies.
 
-## Project Structure
-
-```
-├── css
-│   └── styles.css
-├── imgs
-│   └── laughing.jpg
-│   ├── blob1.png
-│   ├── blob2.png
-│   ├── blob3.png
-│   ├── (...)
-├── index.html
-├── index.js
-└── package.json
-```
-
 ## Setup and Installation
 
 1. **Clone the Repository**:

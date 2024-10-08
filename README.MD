@@ -31,7 +31,7 @@ The application integrates with three external APIs:
 1. **Clone the Repository**:
     ```bash
     git clone https://github.com/your-username/joke-generator.git
-    cd joke-generator
+    cd 4-APIs-Nivell3
     ```
 
 2. **Install Dependencies**:

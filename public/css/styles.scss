@@ -44,7 +44,38 @@ body.loaded {
 .icon {
     width: 150%;
     height: 150%;
+    border-radius: 50%;
 }
+
+body {
+    position: relative; /* Ensure the body has a position property */
+    z-index: 0; /* Default stacking context */
+}
+
+#blob3, #blob2 {
+    position: absolute;
+    z-index: -1;
+}
+
+@keyframes pulsate {
+    0% {
+        background-color: rgba(247, 200, 69, 0.3); /* Semi-transparent base color */
+    }
+    50% {
+        background-color: rgb(247,204,69, 0.5); /* Fully opaque base color */
+    }
+    100% {
+        background-color: rgba(247, 200, 69, 0.3); /* Semi-transparent base color */
+    }
+}
+#weather-icon {
+    animation: pulsate 5s infinite;
+}
+
+// #weather {
+//     position: relative;
+//     z-index: 1;
+// }
 
 @media (min-width: 768px) {
     .custom-card-height {

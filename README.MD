@@ -30,7 +30,7 @@ The application integrates with three external APIs:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/joke-generator.git
+    git clone https://github.com/jorditer/4-APIs-Nivell3.git
     cd 4-APIs-Nivell3
     ```
 
